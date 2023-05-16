@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, View , ScrollView} from "react-native";
 import React from "react";
 import { Stack, useRouter } from "expo-router";
 
@@ -9,7 +9,6 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
-import { ScrollView } from "react-native-gesture-handler";
 
 const Home = () => {
   const router = useRouter();
@@ -19,8 +18,12 @@ const Home = () => {
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-          headerLeft: () => <ScreenHeaderBtn />,
-          headerRight: () => <ScreenHeaderBtn />,
+          headerLeft: () => (
+            <ScreenHeaderBtn iconUrl={icons.menu} dimension={"60%"} />
+          ),
+          headerRight: () => (
+            <ScreenHeaderBtn iconUrl={images.profile} dimension={"100%"} />
+          ),
           title: "",
         }}
       />
